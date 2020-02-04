@@ -2,7 +2,7 @@ package ru.lokyanvs;
 
 import java.util.function.UnaryOperator;
 
-public class Generator implements UnaryOperator<Integer> {
+public class Generator /*implements UnaryOperator<Integer>*/{
     private int sum;
     private int prev;
 
@@ -10,7 +10,7 @@ public class Generator implements UnaryOperator<Integer> {
         this.sum = second;
     }
 
-    @Override
+    //@Override
     public Integer apply(Integer o) {
         sum += prev;
         prev = o;

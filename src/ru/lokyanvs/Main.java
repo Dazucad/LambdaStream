@@ -13,7 +13,7 @@ public class Main {
         int first=scanner.nextInt();
         System.out.println("Введите 2 число");
         int second=scanner.nextInt();
-        List<Integer> list= Stream.iterate(first,new Generator(second)).limit(20).collect(Collectors.toList());
+        List<Integer> list= Stream.iterate(first,new Generator(second)::apply).limit(20).collect(Collectors.toList());
         System.out.println(list);
     }
 }
