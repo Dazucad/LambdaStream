@@ -13,7 +13,13 @@ public class Main {
         int first=scanner.nextInt();
         System.out.println("Введите 2 число");
         int second=scanner.nextInt();
-        List<Integer> list= Stream.iterate(first,new Generator(second)::apply).limit(20).collect(Collectors.toList());
+
+        //1 способ
+        List<Integer> list= Stream.iterate(first,new Generator(second)::apply).limit(30).collect(Collectors.toList());
+        System.out.println(list);
+
+        //2 сопсоб
+        list=Stream.concat(Stream.of(first,second),Stream.generate(new Generator(first,second))).limit(30).collect(Collectors.toList());
         System.out.println(list);
     }
 }
